@@ -1,0 +1,574 @@
+@charset "utf-8";
+
+
+* {
+    padding:0px; margin:0px; box-sizing:border-box;
+}
+
+a{ text-decoration:none; color:inherit;
+    list-style: none;
+}
+
+ul {
+    list-style:none
+}
+
+
+h1 {
+    text-align:center;
+    padding:30px 0px; 
+    }
+img {max-width:100%; vertical-align: middle;}
+
+body {
+    font-size:16px; color:#666; 
+}
+
+
+.inner {
+    max-width:1170px; margin:0 auto; 
+}
+.cf::after{ 
+    content:''; display:block; clear:both
+}
+
+#header { 
+    border-top:5px solid #009223;
+    background-color: #ffffff;
+    
+      
+}
+#header .inner {position:relative;}
+
+
+.membership { position:absolute; top:50px; right:0;color: #666666; font-size: 13px;
+}
+
+
+.membership a {padding:0 15px;
+    vertical-align:middle;
+    /*높이가 다른 인라인요소들을 중간선에 맞추기 위한 속성*/}
+
+
+.membership a:last-child { padding: 0 0 0 5px}
+.membership a:nth-child(2){ position:relative}
+
+.membership a:nth-child(2)::after{
+    content:''; color:#ddd;  
+    position:absolute; top:50%;
+    left:-3px;
+    width:3px; height:3px; background:#ddd;
+    margin-top:-1.5px;
+}
+
+
+
+
+/* 1단계 메뉴 */
+#nav .depth1 { background-color: #ffffff;
+                   
+}
+#nav .depth1 > li {
+       
+float: left;
+width:16.6666%;
+text-align:center;
+padding:30px 0px;
+position:relative;
+
+}
+
+#nav .depth1 > li > a {
+display:block;
+font-weight:bold;
+letter-spacing: -0.72px;
+color:#292929;
+ font-size:18px;
+padding:30px 0px;
+
+}
+
+/*2단계 메뉴*/
+#nav .depth2 {
+    padding:20px 0px;
+    position:absolute;
+    top:100%; width:100%; height:0px; overflow:hidden; opacity:0;
+    left:0;
+    border:0px solid black;
+    background-color: #ffffff;
+    /* display:none; */
+    z-index:99;
+    color:#666;
+    border-top:1px solid #e5e5e5;
+    transition:all 0.3s
+
+}
+#nav .depth1:hover > li > .depth2{
+    /* display:block; */
+    height:244px; opacity:1;
+}
+
+#nav .depth1 > li:hover > a {
+    color:#009223;
+}
+
+
+
+#nav .depth2 > li {
+    line-height: 2.5em;
+    color:#009223;
+}
+
+#nav .depth2 > li:hover 
+{
+    color:#009223;
+}
+
+
+#nav .depth2 > li:hover a {
+    text-decoration:underline;
+}
+#nav {position:relative}
+#nav .bgbox {
+    width:100%; height:0px;
+    background:#fff;
+    border-top:1px solid #e5e5e5;
+    position:absolute;
+    top:100%; z-index:98;
+    /* display: none; */
+    transition:all 0.3s
+
+
+}
+#nav .depth1:hover + .bgbox {
+    /* display:block; */
+    height:280px;
+}
+
+
+#main {
+    position:relative
+}
+
+#main .slideouter img { width: 100%;
+
+}
+#main .slideouter {
+     height:440px;
+     overflow: hidden;
+}
+
+
+#main .store { position:relative; height:80px}
+#main .storeinfo {position:absolute;
+    top:-30px; right:0;
+
+}
+#main .storeinfo > div {
+    width:300px; float:left; height:80px;
+    text-align:center; 
+    font-size: 22px;
+    line-height: 80px;
+}
+#main .storeinfo > div:first-child {
+    background-color: #ffce32;
+    border-radius: 30px 0 0 0;
+}
+#main .storeinfo > div:last-child {
+    background-color: #009223; color:#fff;
+    border-radius: 0 0 30px 0;
+}
+
+
+
+
+#main .storeinfo > div > a {display:block;
+    height:80px;
+    text-align:center;
+   font-size: 22px;
+   line-height: 80px;
+    letter-spacing:-2px;
+}
+
+
+/*서브웨이 메뉴*/
+#main .subwaymenu {padding-top: 30px;}
+#main .subwaymenu > div { position:relative; max-width: 1230px; margin:0 auto}
+#main .subwaymenu h2{
+    font-size: 60px;
+    background-image: url(../images/bul_tit.png);
+    background-repeat: no-repeat;
+    padding-left:25px;
+    color:#000;
+ }
+
+#main .subwaymenu .title {
+    
+    position:absolute; right:0;
+    top:20px;
+}
+#main .subwaymenu .title li {float:left; 
+    font-size: 16px; font-weight:bold;
+    padding:0 20px;
+    cursor:pointer;  position:relative;
+   }
+
+#main .subwaymenu .title li.active {
+    color:#009223;
+}
+
+
+#main .subwaymenu .title li:last-child {
+    padding-right:0;
+}
+
+#main .subwaymenu .title li::after {
+    content:'';
+    width:1px; height:13px; background-color: #ddd;
+    position:absolute; top:5px; right:0;
+    
+}
+#main .subwaymenu .title li:last-child::after {
+    display:none;
+}
+
+
+/*메인 subway menu*/
+#main .subwaymenu .content { padding:30px 0 100px; }
+#main .subwaymenu .content ul { overflow: hidden;}
+#main .subwaymenu .content li {
+    width:25%; 
+    float:left;
+    text-align: center;
+    padding:20px 0;  
+    position: relative;
+    overflow:hidden;
+   
+}
+#main .subwaymenu .content li img { transition: all 0.5s;}
+#main .subwaymenu .content li strong {
+     font-size:18px;
+    color:#292929;
+    transition:all 0.5s;
+}
+#main .subwaymenu .content li p {
+    font-style: 13px;
+    color:#999;
+    padding-top:15px 0;
+    transition: all 0.5s;    
+}
+#main .subwaymenu .content > div {
+    display: none;
+}
+#main .subwaymenu .content > div.cont1 {
+    display: block;
+}
+
+
+
+
+
+
+
+#main .subwaymenu .content li:hover p {
+opacity:0;}
+
+
+#main .subwaymenu .content li:hover strong {
+
+    display:inline-block;
+    transform: scale(1.5) translatey(15px);
+}
+#main .subwaymenu .content li:hover img {
+transform: scale(1.2); 
+}
+
+#main .subwaymenu .content li:hover::after{
+    content:'';
+    width:98px; height:98px;
+    background-image: url(../images/emm.png); 
+    background-repeat:no-repeat;
+    position:absolute;
+    top:50%; left:50%;
+    transform: translate(-50%, -50%);
+    opacity:1
+
+}
+
+/*introduce 시작*/
+
+#main .introduce {
+    background-image: url(../images/bg_content.gif);
+    padding:80px 0;
+}
+
+ 
+    
+     #main .introduce .kim {
+        float:left;
+
+        background-repeat :no-repeat;
+    } 
+    
+    #main .introduce .own { 
+        width:33%; position: relative;
+    }
+
+    #main .introduce .kim .btn:hover {
+        content:'';
+        background:rgba(0,0,0,0.5)
+    }
+    
+    #main .introduce .two {
+        width:67%;  position: relative;
+    }
+
+    #main .introduce .kim .btn:hover {
+        content:'';
+        background:rgba(0,0,0,0.5)
+    }
+    
+    #main .introduce .three {
+
+        width:70%; overflow:hidden;
+        background-color: #fff;
+        height:292.5px;
+        border-radius:35px 0 35px 0 ;
+        margin-top: 30px;
+        padding:70px;
+
+    }
+
+    #main .introduce .three .what {
+        width:45%; float:left;
+        padding-right: 100px;
+    }
+    
+    #main .introduce .three .what h2 {
+        font-size: 30px; color:#292929;
+        background-image: url(../images/bul_tit.png);
+        background-repeat: no-repeat;
+        height:60px; padding:15px 0 0 20px;
+        
+    }
+
+    #main .introduce .three .what p {
+        /* font-size:16px; color:#666; */
+        text-align:center;
+        letter-spacing:-1px;
+        padding:15px
+    }
+
+
+
+   #main .introduce .three .new {
+       width:55%; float:left;
+       
+
+   }
+   #main .introduce .three .new li {
+       color:#292929;
+    line-height:2.5em;
+    letter-spacing: -1px;
+   
+
+   }
+   
+   
+   
+   #main .introduce .three .new li > a:hover {
+       color:#009223;
+      
+   }
+   #main .introduce .three .new li > a {
+       position:relative;
+   }
+
+   #main .introduce .three .new li > a::after {
+       content:'';
+       width:0%; height:1px; background-color: #009223;
+       position:absolute; left:0; bottom:0;
+       transition:all 0.5s;
+   }
+   #main .introduce .three .new li:hover > a::after{
+       width:100%; 
+   }
+
+   #main .introduce .three .new > a {
+       font-size: 14px; 
+        color:#999;
+        display:inline-block;
+        padding-top:20px;
+   }
+  
+    
+    #main .introduce .four {
+
+        width:22.5%; margin:30px 5% 0 2.5%;
+        /* border-radius: 0 30px 0 30px;
+        overflow:hidden */
+    }
+
+    #main .introduce .four img {
+        border-radius: 0 35px 0 35px;
+
+    }
+
+
+    #main .introduce .kim .tit {
+        font-size: 28px; 
+        font-weight: bold;
+        line-height : 40px;
+        letter-spacing: -2px;
+        color:#fff;
+        margin-bottom:100px;
+        position: absolute; top:38px; left:38px;
+    }
+    #main .introduce .two .tit {
+        left:390px
+
+    }
+    #main .introduce .kim .btn{
+        color:#fff;
+        position:absolute; bottom:38px; left:38;
+        border:1px solid #fff;
+        display: inline-block;
+        padding:10px 20px;
+        border-radius:50px;
+        font-weight: bold   ;
+        
+    }
+
+
+    #main .introduce .two .btn {
+        left:390px;
+    }
+
+/* 써브웨이 안내 */
+#main .about .inner {
+overflow: hidden; 
+padding:40px 0px;
+text-align:center; padding:0 20px;
+}
+#main .about li {
+     /* float:left; width:25%;  */
+     display:inline-block;
+   
+}
+#main .about li:last-child {
+    padding-right:40px;
+}
+#main .about li .icon {
+    width:70px; height:70px;
+    background-image: url(../images/icon_quickmenu.png);
+    display:inline-block;
+    vertical-align:middle;
+    margin-right:10px;
+}
+#main .about li .text {
+    display:inline-block;
+    vertical-align:middle;
+    text-align:left;
+
+}
+
+
+#main .about li .text strong {
+    font-size: 18px;
+    color:#292929;
+}
+#main .about li .text p {
+    font-size:13px;
+    color:#999;
+    margin-top:6px;
+    letter-spacing:-1px;
+}
+#main .about li:first-child .icon {
+    background-position:0 0;
+
+}
+#main .about li:nth-child(2) .icon {
+    background-position:-70px 0;
+}
+#main .about li:nth-child(3) .icon {
+    background-position:-140px 0;
+}
+#main .about li:last-child .icon {
+    background-position:-210px 0;
+}
+
+
+
+
+
+
+
+    
+    
+    #footer {
+        background:#292929; font-size:14px;
+        letter-spacing: -1px;
+    }
+    
+    #footer .bottommenu {
+        border-bottom:1px solid #3b3b3b;
+        padding:22px 0;
+
+    }
+
+    #footer .bottommenu a {
+        padding-right: 30px;;
+      
+    }
+    #footer .bottommenu strong {
+        color:#bbb;
+    }
+    #footer .info {
+        padding:22px 0;
+        position:relative;
+    }
+    #footer .info > div:first-child {
+        margin-bottom:7px;
+    }
+
+    #footer .info .sns {
+        position:absolute;
+        top:50%; right:0;
+        transform:translatey(-50%); right:0;
+    }
+    #footer .info .sns > div {
+        width:50px; height:50px; display:inline-block;
+         margin:0 7px; 
+     
+        
+    }
+    #footer .info .sns > div:first-child{
+        background-image: url(../images/icon_sns_instar.png);
+       
+    }
+    #footer .info .sns > div:last-child {
+        background-image: url(../images/icon_sns_facebook.png);
+    }
+    #footer .info .sns > div:hover {
+        background-position: -50px 0;}
+
+    #footer .info > div:first-child span {
+        padding:0 7px; position:relative;
+    }
+    #footer .info > div:first-child span.addr {
+        padding-left:0;
+    }
+    #footer .info > div:first-child span::after {
+        content:'';
+        position:absolute;
+        left:0;
+        top:5px;
+        width:2px;
+        height:10px;
+        background-color:#666;
+    }
+    #footer .info > div:first-child span.addr::after {
+        display:none;
+    }
+
+   
