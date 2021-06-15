@@ -240,7 +240,7 @@ padding:30px 0px;
     width:25%; 
     float:left;
     text-align: center;
-    padding:20px 15px;  
+    padding:20px 0;  
     position: relative;
     overflow:hidden;
    
@@ -280,7 +280,7 @@ opacity:0;}
     transform: scale(1.5) translatey(15px);
 }
 #main .subwaymenu .content li:hover img {
-transform: scale(1.5); 
+transform: scale(1.2); 
 }
 
 #main .subwaymenu .content li:hover::after{
@@ -569,3 +569,6 @@ text-align:center; padding:0 20px;
     }
     #footer .info > div:first-child span.addr::after {
         display:none;
+    }
+
+   
