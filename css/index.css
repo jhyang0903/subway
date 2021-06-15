@@ -240,7 +240,7 @@ padding:30px 0px;
     width:25%; 
     float:left;
     text-align: center;
-    padding:20px 0;  
+    padding:20px 15px;  
     position: relative;
     overflow:hidden;
    
@@ -280,7 +280,7 @@ opacity:0;}
     transform: scale(1.5) translatey(15px);
 }
 #main .subwaymenu .content li:hover img {
-transform: scale(1.2); 
+transform: scale(1.5); 
 }
 
 #main .subwaymenu .content li:hover::after{
